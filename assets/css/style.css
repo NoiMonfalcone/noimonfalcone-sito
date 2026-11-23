@@ -1,0 +1,224 @@
+/* Stile "carta e inchiostro": bordi netti, ombre piene, adesivi, colori piatti. */
+
+:root {
+  --ink: #14213D;
+  --paper: #FFF7E8;
+  --blue: #2F5BEA;
+  --sun: #FFC53D;
+  --coral: #FF6B4A;
+  --mint: #2EC4A0;
+}
+html { scroll-padding-top: 96px; }
+body { background: var(--paper); color: var(--ink); }
+::selection { background: var(--sun); color: var(--ink); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- Animazioni allo scroll ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal[data-delay="1"] { transition-delay: .07s; }
+.reveal[data-delay="2"] { transition-delay: .14s; }
+.reveal[data-delay="3"] { transition-delay: .21s; }
+.reveal[data-delay="4"] { transition-delay: .28s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .marquee-track, .spin-slow { animation: none !important; }
+  * { scroll-behavior: auto !important; }
+}
+
+/* ---------- Bottoni ---------- */
+.btn {
+  --sh: var(--ink);
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .75rem 1.4rem; border: 2px solid var(--ink); border-radius: 9999px;
+  font-weight: 700; font-size: .95rem; line-height: 1.2; color: var(--ink); background: #fff;
+  box-shadow: 3px 3px 0 var(--sh);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--sh); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--sh); }
+.btn-sun { background: var(--sun); }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-coral { background: var(--coral); }
+.btn-ink { background: var(--ink); color: var(--paper); --sh: var(--sun); }
+.btn .arrow { transition: transform .15s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ---------- Card ---------- */
+.card {
+  background: #fff; border: 2px solid var(--ink); border-radius: 1.25rem;
+  box-shadow: 5px 5px 0 var(--ink);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+a.card:hover, .card.hoverable:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--ink); }
+
+/* ---------- Adesivi, evidenziatore, parola in risalto ---------- */
+.sticker {
+  display: inline-block; border: 2px solid var(--ink); border-radius: 9999px; padding: .2rem .8rem;
+  font-weight: 800; font-size: .78rem; letter-spacing: .02em; transform: rotate(-3deg); background: #fff; color: var(--ink);
+}
+.hl {
+  background: linear-gradient(transparent 60%, var(--hl, var(--sun)) 60%, var(--hl, var(--sun)) 92%, transparent 92%);
+  padding: 0 .1em; margin: 0 -.1em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.word {
+  display: inline-block; background: var(--sun); color: var(--ink); padding: 0 .22em .06em;
+  border: 2px solid var(--ink); border-radius: .25em; transform: rotate(-2deg); box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* ---------- Sezioni a tinta unita con bordo "smerlato" ---------- */
+.tone-blue  { --sec: var(--blue);  background: var(--blue);  color: #fff; }
+.tone-sun   { --sec: var(--sun);   background: var(--sun);   color: var(--ink); }
+.tone-coral { --sec: var(--coral); background: var(--coral); color: var(--ink); }
+.tone-mint  { --sec: var(--mint);  background: var(--mint);  color: var(--ink); }
+.tone-ink   { --sec: var(--ink);   background: var(--ink);   color: var(--paper); }
+.scallop { position: relative; border-bottom: 0; }
+.scallop::after {
+  content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 18px; z-index: 1; pointer-events: none;
+  background: radial-gradient(circle at 18px 0, var(--sec) 17px, transparent 18px) repeat-x;
+  background-size: 36px 18px;
+}
+
+.scallop-top::before {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 100%; height: 18px; pointer-events: none;
+  background: radial-gradient(circle at 18px 18px, var(--sec) 17px, transparent 18px) repeat-x;
+  background-size: 36px 18px;
+}
+
+/* ---------- Cornici foto e segnaposto ---------- */
+.frame { background: #fff; padding: .55rem .55rem 2.2rem; border: 2px solid var(--ink); border-radius: .4rem; box-shadow: 5px 5px 0 var(--ink); }
+.ph-img {
+  display: grid; place-items: center; align-content: center; color: var(--ink); font-weight: 800; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  background: repeating-linear-gradient(135deg, var(--c1, #DCE5FF) 0 14px, var(--c2, #C9D7FF) 14px 28px);
+}
+
+/* ---------- Marquee e adesivo rotante ---------- */
+.marquee { overflow: hidden; white-space: nowrap; }
+.marquee-track { display: inline-flex; animation: marq 32s linear infinite; }
+@keyframes marq { to { transform: translateX(-50%); } }
+.spin-slow { animation: spin 22s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Navigazione ---------- */
+.nav-link { position: relative; padding: .4rem .1rem; font-weight: 700; }
+.nav-link::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--sun); z-index: -1;
+  transform: scaleX(0); transform-origin: left; transition: transform .2s ease;
+}
+.nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); }
+.dropdown { opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .15s, transform .15s, visibility .15s; }
+.has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown { opacity: 1; visibility: visible; transform: none; }
+
+/* ---------- Galleria a mosaico (proporzioni originali) ---------- */
+.masonry { display: flex; gap: 1rem; align-items: flex-start; }
+.masonry-col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 1rem; }
+.g-item {
+  display: block; width: 100%; overflow: hidden; background: #fff; cursor: zoom-in;
+  border: 2px solid var(--ink); border-radius: .9rem; box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.g-item:hover { transform: translate(-2px, -2px) rotate(-.4deg); box-shadow: 6px 6px 0 var(--ink); }
+.g-item img, .g-item .ph-img { display: block; width: 100%; height: auto; }
+.chip { border: 2px solid var(--ink); border-radius: 9999px; padding: .4rem 1rem; font-weight: 700; background: #fff; transition: background-color .15s, transform .15s; }
+.chip:hover { transform: translateY(-2px); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+#lightbox { opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s; }
+#lightbox.open { opacity: 1; visibility: visible; }
+
+/* ---------- Timeline archivio ---------- */
+.timeline { position: relative; }
+.timeline::before { content: ''; position: absolute; left: 11px; top: 8px; bottom: 8px; border-left: 2px dashed var(--ink); opacity: .5; }
+.timeline-dot { position: absolute; left: 3px; top: 5px; width: 18px; height: 18px; border-radius: 9999px; background: var(--sun); border: 2px solid var(--ink); }
+
+/* ---------- Toast ---------- */
+#toast {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translate(-50%, 20px); opacity: 0; z-index: 80; pointer-events: none;
+  background: var(--ink); color: var(--paper); padding: .7rem 1.2rem; border-radius: 9999px; font-weight: 700; font-size: .9rem;
+  border: 2px solid var(--sun); transition: opacity .2s, transform .2s;
+}
+#toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Numeri a contorno ---------- */
+.outline-num { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+
+
+/* ---------- Locandine: carosello circolare 3D (pagine attività) ---------- */
+.orbit { --ph: 15rem; position: relative; overflow: hidden; padding-bottom: .5rem; }
+@media (min-width: 640px) { .orbit { --ph: 19rem; } }
+@media (min-width: 1280px) { .orbit { --ph: 22rem; } }
+.orbit-stage { position: relative; z-index: 0; isolation: isolate; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+/* l'anello ha un suo livello: le locandine non finiscono sopra il menu o sopra la locandina aperta */
+/* "pavimento": un'ombra morbida sotto l'anello */
+.orbit-stage::after {
+  content: ""; position: absolute; left: 10%; right: 10%; bottom: 0; height: 2.5rem; z-index: 0;
+  background: radial-gradient(closest-side, rgb(20 33 61 / .22), transparent); pointer-events: none;
+}
+.poster {
+  padding: 0; background: #fff; cursor: zoom-in;
+  border: 2px solid var(--ink); border-radius: .5rem; overflow: hidden; box-shadow: 4px 4px 0 var(--ink);
+}
+.orbit-card { position: absolute; left: 50%; top: 0; transform-origin: 50% 50%; will-change: transform, filter; }
+.orbit-card img { display: block; height: var(--ph); width: auto; pointer-events: none; -webkit-user-drag: none; }
+.orbit-card { cursor: pointer; }
+.orbit-card.is-front { box-shadow: 6px 6px 0 var(--ink); cursor: zoom-in; }
+.orbit-card { transition: box-shadow .2s ease; }
+.orbit-card.is-hover { box-shadow: 9px 12px 0 var(--ink); }
+.orbit-card:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
+.orbit-ctrl { display: flex; justify-content: center; gap: 1rem; margin-top: 1.25rem; }
+/* Telefono: striscia da scorrere col dito al posto del cerchio */
+.orbit-strip { --ph: 22rem; }
+.orbit-strip .orbit-stage {
+  display: flex; gap: 1rem; overflow-x: auto; touch-action: auto; /* niente aggancio: il nastro scorre continuo */
+  padding: .5rem 1.25rem 1rem; scrollbar-width: none;
+}
+.orbit-strip .orbit-stage::-webkit-scrollbar { display: none; }
+.orbit-strip .orbit-stage::after { display: none; }
+.orbit-strip .orbit-card { position: relative; left: auto; top: auto; flex: none; cursor: zoom-in; }
+.orbit-clone { display: none; }
+.orbit-strip .orbit-clone { display: block; }
+.poster-box { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 1rem; background: rgb(20 33 61 / .94); }
+.poster-box[hidden] { display: none; }
+.poster-box img { max-width: min(100%, 44rem); max-height: calc(100vh - 6rem); width: auto; height: auto; border: 2px solid #fff; border-radius: .5rem; }
+.poster-box figcaption { margin-top: .75rem; text-align: center; color: #fff; font-weight: 700; }
+.poster-box .poster-close {
+  position: absolute; top: 1rem; right: 1rem; width: 2.75rem; height: 2.75rem; border-radius: 9999px;
+  background: var(--sun); color: var(--ink); border: 2px solid var(--ink); font-size: 1.5rem; font-weight: 800; line-height: 1;
+}
+
+/* ---------- In evidenza: locandine delle attività con iscrizioni aperte ---------- */
+.feat-poster {
+  position: relative; display: block; width: 100%; padding: 0; cursor: zoom-in; background: #fff;
+  border: 2px solid var(--ink); border-radius: .6rem; box-shadow: 6px 6px 0 var(--ink);
+  animation: feat-breathe 3.2s ease-in-out infinite; animation-delay: var(--d, 0s);
+}
+.feat:nth-child(even) .feat-poster { --tilt: 1.5deg; }
+.feat-poster img { display: block; width: 100%; height: auto; border-radius: calc(.6rem - 2px); }
+/* alone che si allarga e svanisce, come un battito */
+.feat-poster::after {
+  content: ""; position: absolute; inset: -2px; border-radius: .6rem; pointer-events: none;
+  box-shadow: 0 0 0 0 rgb(255 197 61 / .75);
+  animation: feat-pulse 3.2s ease-out infinite; animation-delay: var(--d, 0s);
+}
+.feat-poster:hover, .feat-poster:focus-visible { animation-play-state: paused; }
+.feat-badge { position: absolute; top: -.9rem; right: -.6rem; z-index: 2; transform: rotate(6deg); animation: feat-wiggle 3.2s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes feat-breathe {
+  0%, 100% { transform: rotate(var(--tilt, -1.5deg)) translateY(0) scale(1); }
+  50%      { transform: rotate(calc(var(--tilt, -1.5deg) * -0.5)) translateY(-8px) scale(1.025); }
+}
+@keyframes feat-pulse {
+  0%   { box-shadow: 0 0 0 0 rgb(255 197 61 / .8); }
+  70%  { box-shadow: 0 0 0 22px rgb(255 197 61 / 0); }
+  100% { box-shadow: 0 0 0 22px rgb(255 197 61 / 0); }
+}
+@keyframes feat-wiggle {
+  0%, 80%, 100% { transform: rotate(6deg) scale(1); }
+  86% { transform: rotate(-4deg) scale(1.12); }
+  92% { transform: rotate(9deg) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .feat-poster, .feat-poster::after, .feat-badge { animation: none; }
+}
+
+/* ---------- Mappa caricata solo al clic (consenso) ---------- */
+.map-consent { background: repeating-linear-gradient(135deg, var(--paper) 0 18px, #FFEFC2 18px 36px); }
+

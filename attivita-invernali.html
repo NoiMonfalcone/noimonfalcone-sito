@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attività invernali | NOI Monfalcone APS</title>
+  <meta name="description" content="Attività invernali di NOI Monfalcone: Pomeriggi FuoriClasse, D.O.C., feste ed eventi. Iscrizioni online e archivio degli anni passati.">
+  <link rel="canonical" href="https://giacomo.cogitamus.it/attivita-invernali.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="NOI Monfalcone APS">
+  <meta property="og:title" content="Attività invernali | NOI Monfalcone APS">
+  <meta property="og:description" content="Attività invernali di NOI Monfalcone: Pomeriggi FuoriClasse, D.O.C., feste ed eventi. Iscrizioni online e archivio degli anni passati.">
+  <meta property="og:url" content="https://giacomo.cogitamus.it/attivita-invernali.html">
+  <meta property="og:image" content="https://giacomo.cogitamus.it/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Foto di gruppo di bambini e animatori all'Estate Ragazzi di NOI Monfalcone">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#2F5BEA">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=20261122">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261122">
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=20261122">
+</head>
+<body data-page="invernali" class="bg-paper font-sans text-ink antialiased">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="tone-blue scallop">
+      <div class="mx-auto max-w-7xl px-5 pb-20 pt-14 lg:px-8 lg:pb-24 lg:pt-20">
+        <p class="reveal text-sm font-extrabold uppercase tracking-widest text-sun">Attività</p>
+        <h1 class="reveal mt-4 font-display text-6xl font-extrabold leading-[0.95] tracking-tight sm:text-8xl" data-delay="1">Attività <span class="word">invernali</span></h1>
+        <p class="reveal mt-6 max-w-2xl text-lg text-white/85" data-delay="2">Doposcuola, laboratori e feste per vivere insieme tutto l'anno scolastico.</p>
+      </div>
+    </section>
+
+    <!-- IN EVIDENZA: locandine delle attività con iscrizioni aperte (da assets/js/data.js, campo "poster") -->
+    <section data-featured data-season="invernali" class="mx-auto max-w-7xl px-5 pt-20 lg:px-8" aria-labelledby="evidenza" hidden></section>
+
+    <section class="mx-auto max-w-7xl px-5 pt-24 lg:px-8" aria-labelledby="corrente">
+      <h2 id="corrente" class="reveal font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Stagione <span class="hl">2026/27</span></h2>
+      <div data-activities data-season="invernali" data-status="open,soon" class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <section class="mx-auto max-w-3xl px-5 pt-28 lg:px-8" aria-labelledby="archivio">
+      <p class="reveal text-sm font-extrabold uppercase tracking-widest text-brand">Archivio</p>
+      <h2 id="archivio" class="reveal mt-2 font-display text-4xl font-extrabold tracking-tight sm:text-5xl" data-delay="1">Gli anni passati</h2>
+      <div data-archive data-season="invernali" class="mt-12"></div>
+    </section>
+
+    <!-- LOCANDINE DELLE ATTIVITÀ PASSATE (scorrono; clic = ingrandisci) -->
+    <section class="pt-28" aria-labelledby="locandine">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <p class="reveal text-sm font-extrabold uppercase tracking-widest text-brand">Locandine</p>
+        <h2 id="locandine" class="reveal mt-2 font-display text-4xl font-extrabold tracking-tight sm:text-5xl" data-delay="1">Le nostre <span class="hl">locandine</span></h2>
+        <p class="reveal mt-4 max-w-xl text-ink/75" data-delay="2">Tocca una locandina per vederla in grande. Trascinale o usa le frecce per farle girare.</p>
+      </div>
+      <div data-posters data-season="invernali" class="posters mt-10"></div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 pt-28 text-center lg:px-8">
+      <p class="reveal font-display text-3xl font-extrabold">Cerchi anche le attività estive?</p>
+      <a href="attivita-estive.html" class="reveal btn btn-sun mt-6" data-delay="1">Vai alle attività estive <span class="arrow" aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js?v=20261122"></script>
+  <script src="assets/js/components.js?v=20261122"></script>
+  <script src="assets/js/locandine.js?v=20261122"></script>
+  <script src="assets/js/main.js?v=20261122"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attività estive | NOI Monfalcone APS</title>
+  <meta name="description" content="Attività estive di NOI Monfalcone: Estate Ragazzi, Campo Medie, Campo Animatori e Pre-scuola. In arrivo l'estate 2026 e archivio degli anni passati.">
+  <link rel="canonical" href="https://giacomo.cogitamus.it/attivita-estive.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="NOI Monfalcone APS">
+  <meta property="og:title" content="Attività estive | NOI Monfalcone APS">
+  <meta property="og:description" content="Attività estive di NOI Monfalcone: Estate Ragazzi, Campo Medie, Campo Animatori e Pre-scuola. In arrivo l'estate 2026 e archivio degli anni passati.">
+  <meta property="og:url" content="https://giacomo.cogitamus.it/attivita-estive.html">
+  <meta property="og:image" content="https://giacomo.cogitamus.it/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Foto di gruppo di bambini e animatori all'Estate Ragazzi di NOI Monfalcone">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#FFC53D">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=20261122">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261122">
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=20261122">
+</head>
+<body data-page="estive" class="bg-paper font-sans text-ink antialiased">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="tone-sun scallop">
+      <div class="mx-auto max-w-7xl px-5 pb-20 pt-14 lg:px-8 lg:pb-24 lg:pt-20">
+        <p class="reveal text-sm font-extrabold uppercase tracking-widest">Attività</p>
+        <h1 class="reveal mt-4 font-display text-6xl font-extrabold leading-[0.95] tracking-tight sm:text-8xl" data-delay="1">Attività <span class="word !bg-brand !text-white">estive</span></h1>
+        <p class="reveal mt-6 max-w-2xl text-lg font-medium" data-delay="2">Estate Ragazzi, campi e pre-scuola: un'estate piena di amici, giochi e nuove esperienze.</p>
+      </div>
+    </section>
+
+    <!-- IN EVIDENZA: locandine delle attività con iscrizioni aperte (da assets/js/data.js, campo "poster") -->
+    <section data-featured data-season="estive" class="mx-auto max-w-7xl px-5 pt-20 lg:px-8" aria-labelledby="evidenza" hidden></section>
+
+    <section class="mx-auto max-w-7xl px-5 pt-24 lg:px-8" aria-labelledby="corrente">
+      <h2 id="corrente" class="reveal font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Estate <span class="hl">2027</span></h2>
+      <div data-activities data-season="estive" data-status="open,soon" class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
+      <p class="reveal mt-8 max-w-xl text-ink/75">Vuoi sapere quando aprono le iscrizioni? Seguici su
+        <a class="font-bold underline decoration-sun decoration-4 underline-offset-2" href="https://www.instagram.com/noimonfalcone/" target="_blank" rel="noopener">Instagram</a> e
+        <a class="font-bold underline decoration-sun decoration-4 underline-offset-2" href="https://www.facebook.com/oratoriodiffuso/" target="_blank" rel="noopener">Facebook</a>.</p>
+    </section>
+
+    <section class="mx-auto max-w-3xl px-5 pt-28 lg:px-8" aria-labelledby="archivio">
+      <p class="reveal text-sm font-extrabold uppercase tracking-widest text-brand">Archivio</p>
+      <h2 id="archivio" class="reveal mt-2 font-display text-4xl font-extrabold tracking-tight sm:text-5xl" data-delay="1">Le estati passate</h2>
+      <div data-archive data-season="estive" class="mt-12"></div>
+    </section>
+
+    <!-- LOCANDINE DELLE ATTIVITÀ PASSATE (scorrono; clic = ingrandisci) -->
+    <section class="pt-28" aria-labelledby="locandine">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <p class="reveal text-sm font-extrabold uppercase tracking-widest text-brand">Locandine</p>
+        <h2 id="locandine" class="reveal mt-2 font-display text-4xl font-extrabold tracking-tight sm:text-5xl" data-delay="1">Le nostre <span class="hl">locandine</span></h2>
+        <p class="reveal mt-4 max-w-xl text-ink/75" data-delay="2">Tocca una locandina per vederla in grande. Trascinale o usa le frecce per farle girare.</p>
+      </div>
+      <div data-posters data-season="estive" class="posters mt-10"></div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 pt-28 text-center lg:px-8">
+      <p class="reveal font-display text-3xl font-extrabold">Cerchi anche le attività invernali?</p>
+      <a href="attivita-invernali.html" class="reveal btn btn-sun mt-6" data-delay="1">Vai alle attività invernali <span class="arrow" aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js?v=20261122"></script>
+  <script src="assets/js/components.js?v=20261122"></script>
+  <script src="assets/js/locandine.js?v=20261122"></script>
+  <script src="assets/js/main.js?v=20261122"></script>
+</body>
+</html>
