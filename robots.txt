@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 
-Sitemap: https://giacomo.cogitamus.it/sitemap.xml
+Sitemap: https://www.noimonfalcone.org/sitemap.xml

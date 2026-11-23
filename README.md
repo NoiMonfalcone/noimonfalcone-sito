@@ -49,11 +49,12 @@ Finché la cartella è vuota viene mostrato un mosaico di segnaposto.
 
 ## SEO e condivisione
 - Anteprime social (Open Graph) in ogni pagina, immagine `assets/img/og-image.jpg` (1200×630).
-- Se il dominio cambia, sostituisci `https://giacomo.cogitamus.it/` in tutte le pagine, in `sitemap.xml` e `robots.txt`.
-- `404.html`: su nginx serve `error_page 404 /404.html;` nella configurazione del sito.
+- Se il dominio cambia, sostituisci `https://www.noimonfalcone.org/` in tutte le pagine, in `sitemap.xml` e `robots.txt`.
+- `404.html`: GitHub Pages la usa in automatico per le pagine inesistenti.
 
 ## Pubblicazione
-Carica l'intera cartella su un hosting statico (Netlify, Cloudflare Pages, GitHub Pages) e punta il dominio.
+Il sito è pubblicato con **GitHub Pages** dalla repository `NoiMonfalcone/noimonfalcone-sito` (branch `main`, cartella principale) sul dominio **www.noimonfalcone.org** (file `CNAME`).
+Ogni push su `main` aggiorna il sito in un paio di minuti. I DNS del dominio sono su Cloudflare.
 Lo stile di Tailwind è già generato in `assets/css/tailwind.css` (nessun servizio esterno).
 Se aggiungi classi nuove alle pagine, rigeneralo dalla cartella `tools/`:
 `cd tools && npx tailwindcss@3.4.17 -c tailwind.config.js -i tailwind.input.css -o ../assets/css/tailwind.css --minify`
