@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-label="NOI Monfalcone">
+  <!-- LOGO SEGNAPOSTO: sostituire con il logo ufficiale (stesso percorso e nome file) -->
+  <rect x="3" y="7" width="50" height="50" rx="14" fill="#FFC53D" stroke="#14213D" stroke-width="3"/>
+  <path d="M14 44V20l12 16V20M32 20h10v24H32z" fill="none" stroke="#14213D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="66" y="35" font-family="Bricolage Grotesque, Figtree, Arial, sans-serif" font-weight="800" font-size="26" fill="#14213D">NOI</text>
+  <text x="66" y="54" font-family="Bricolage Grotesque, Figtree, Arial, sans-serif" font-weight="700" font-size="15" letter-spacing="1" fill="#14213D">Monfalcone</text>
+</svg>
