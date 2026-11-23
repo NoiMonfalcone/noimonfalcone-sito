@@ -3,6 +3,8 @@
 Sito statico in **HTML + TailwindCSS + JavaScript puro**, senza servizi esterni per stile e caratteri. Nessuna build, nessun Node.
 
 ## Anteprima in locale
+I link interni sono senza `.html` (es. `galleria`, non `galleria.html`): GitHub Pages li gestisce da solo.
+Per provarli in locale serve un piccolo server che faccia lo stesso, es. `npx serve` nella cartella del sito.
 - XAMPP: copia la cartella in `C:\xampp\htdocs\` e apri http://localhost/noimonfalcone/
 - Oppure apri `index.html` nel browser (serve connessione per font, Tailwind e mappa).
 

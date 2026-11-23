@@ -8,25 +8,25 @@
     {
       label: 'Attività', key: 'attivita',
       children: [
-        { label: 'Attività invernali', href: 'attivita-invernali.html', key: 'invernali', desc: 'Doposcuola, laboratori ed eventi' },
-        { label: 'Attività estive', href: 'attivita-estive.html', key: 'estive', desc: 'Estate Ragazzi, campi e pre-scuola' },
-        { label: 'Iscrizioni', href: 'iscrizioni.html', key: 'iscrizioni', desc: 'Tutti i moduli in un unico posto' },
+        { label: 'Attività invernali', href: 'attivita-invernali', key: 'invernali', desc: 'Doposcuola, laboratori ed eventi' },
+        { label: 'Attività estive', href: 'attivita-estive', key: 'estive', desc: 'Estate Ragazzi, campi e pre-scuola' },
+        { label: 'Iscrizioni', href: 'iscrizioni', key: 'iscrizioni', desc: 'Tutti i moduli in un unico posto' },
       ],
     },
     {
       label: 'Gruppi', key: 'gruppi',
       children: [
-        { label: 'Catechismo', href: 'gruppi.html#catechismo', key: 'gruppi', desc: 'Prima confessione, comunione e cresima' },
-        { label: 'ControVento', href: 'gruppi.html#controvento', key: 'gruppi', desc: '1ª–3ª media · verso la cresima' },
-        { label: 'ClanDestino', href: 'gruppi.html#clandestino', key: 'gruppi', desc: '1ª–5ª superiore' },
-        { label: 'FightClub', href: 'gruppi.html#fightclub', key: 'gruppi', desc: 'Universitari e lavoratori' },
+        { label: 'Catechismo', href: 'gruppi#catechismo', key: 'gruppi', desc: 'Prima confessione, comunione e cresima' },
+        { label: 'ControVento', href: 'gruppi#controvento', key: 'gruppi', desc: '1ª–3ª media · verso la cresima' },
+        { label: 'ClanDestino', href: 'gruppi#clandestino', key: 'gruppi', desc: '1ª–5ª superiore' },
+        { label: 'FightClub', href: 'gruppi#fightclub', key: 'gruppi', desc: 'Universitari e lavoratori' },
       ],
     },
-    { label: 'Chi siamo', href: 'chi-siamo.html', key: 'chi-siamo' },
-    { label: 'Galleria', href: 'galleria.html', key: 'galleria' },
-    { label: '5x1000', href: 'sostienici.html', key: 'sostienici' },
-    { label: 'Trasparenza', href: 'trasparenza.html', key: 'trasparenza' },
-    { label: 'Contatti', href: 'contatti.html', key: 'contatti' },
+    { label: 'Chi siamo', href: 'chi-siamo', key: 'chi-siamo' },
+    { label: 'Galleria', href: 'galleria', key: 'galleria' },
+    { label: '5x1000', href: 'sostienici', key: 'sostienici' },
+    { label: 'Trasparenza', href: 'trasparenza', key: 'trasparenza' },
+    { label: 'Contatti', href: 'contatti', key: 'contatti' },
   ];
 
   const isActive = (item) => item.key === page || (item.children && item.children.some((c) => c.key === page));
@@ -65,13 +65,13 @@
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-sun focus:px-4 focus:py-2 focus:font-bold">Vai al contenuto</a>
     <header id="header" class="sticky top-0 z-50 border-b-2 border-ink bg-paper">
       <div class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
-        <a href="index.html" class="flex items-center" aria-label="NOI Monfalcone – Home">
+        <a href="/" class="flex items-center" aria-label="NOI Monfalcone – Home">
           <img src="assets/img/logo-marchio.png" alt="" class="h-12 w-auto" width="62" height="48">
           <span class="ml-2 font-display text-xl font-extrabold leading-none text-[#0047AB]">Noi<br><span class="text-base font-bold tracking-wide">Monfalcone</span></span>
         </a>
         <nav class="hidden items-center gap-8 lg:flex" aria-label="Navigazione principale">
           <ul class="flex items-center gap-7">${NAV.map(desktopItem).join('')}</ul>
-          <a href="iscrizioni.html" class="btn btn-sun !py-2">Iscriviti</a>
+          <a href="iscrizioni" class="btn btn-sun !py-2">Iscriviti</a>
         </nav>
         <button id="menu-btn" type="button" class="btn btn-sun !h-11 !w-11 !p-0 lg:hidden" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -81,7 +81,7 @@
       <div id="mobile-menu" class="hidden max-h-[calc(100vh-72px)] overflow-y-auto border-t-2 border-ink bg-paper lg:hidden">
         <nav class="mx-auto max-w-7xl px-5 pb-8 pt-2" aria-label="Navigazione mobile">
           <ul>${NAV.map(mobileItem).join('')}</ul>
-          <a href="iscrizioni.html" class="btn btn-sun mt-6 w-full">Iscriviti alle attività</a>
+          <a href="iscrizioni" class="btn btn-sun mt-6 w-full">Iscriviti alle attività</a>
         </nav>
       </div>
     </header>`;
@@ -111,20 +111,20 @@
           <div>
             <h2 class="text-sm font-extrabold uppercase tracking-widest text-sun">Attività</h2>
             <ul class="mt-4 space-y-2 font-semibold">
-              <li><a class="hover:text-sun" href="attivita-invernali.html">Attività invernali</a></li>
-              <li><a class="hover:text-sun" href="attivita-estive.html">Attività estive</a></li>
-              <li><a class="hover:text-sun" href="gruppi.html">Gruppi e catechismo</a></li>
-              <li><a class="hover:text-sun" href="iscrizioni.html">Iscrizioni</a></li>
-              <li><a class="hover:text-sun" href="galleria.html">Galleria</a></li>
+              <li><a class="hover:text-sun" href="attivita-invernali">Attività invernali</a></li>
+              <li><a class="hover:text-sun" href="attivita-estive">Attività estive</a></li>
+              <li><a class="hover:text-sun" href="gruppi">Gruppi e catechismo</a></li>
+              <li><a class="hover:text-sun" href="iscrizioni">Iscrizioni</a></li>
+              <li><a class="hover:text-sun" href="galleria">Galleria</a></li>
             </ul>
           </div>
           <div>
             <h2 class="text-sm font-extrabold uppercase tracking-widest text-sun">L'associazione</h2>
             <ul class="mt-4 space-y-2 font-semibold">
-              <li><a class="hover:text-sun" href="chi-siamo.html">Chi siamo</a></li>
-              <li><a class="hover:text-sun" href="sostienici.html">5x1000</a></li>
-              <li><a class="hover:text-sun" href="trasparenza.html">Trasparenza</a></li>
-              <li><a class="hover:text-sun" href="contatti.html">Contatti</a></li>
+              <li><a class="hover:text-sun" href="chi-siamo">Chi siamo</a></li>
+              <li><a class="hover:text-sun" href="sostienici">5x1000</a></li>
+              <li><a class="hover:text-sun" href="trasparenza">Trasparenza</a></li>
+              <li><a class="hover:text-sun" href="contatti">Contatti</a></li>
             </ul>
           </div>
           <div>
@@ -140,7 +140,7 @@
         </div>
         <div class="mt-12 flex flex-col gap-2 text-xs text-paper/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© <span id="year"></span> ${D.name}</p>
-          <p><a class="hover:text-sun" href="privacy.html">Privacy e cookie</a></p>
+          <p><a class="hover:text-sun" href="privacy">Privacy e cookie</a></p>
         </div>
       </div>
     </footer>
